@@ -9,6 +9,10 @@ export const MESSAGES = Object.freeze({
   INVALID_ATTEMPTS_TYPE: '[ERROR] 시도 횟수는 숫자여야 합니다.',
   INVALID_ATTEMPTS_INTEGER: '[ERROR] 시도 횟수는 정수여야 합니다.',
   INVALID_ATTEMPTS_LIMIT: '[ERROR] 시도 횟수는 1 이상이어야 합니다.',
+
+  GAME_RESULT: '실행 결과',
+  WINNER_ANNOUNCEMENT: '최종 우승자 : ',
+  NO_WINNER: '없음',
 });
 
 export const GAME_RULES = Object.freeze({
