@@ -18,6 +18,8 @@ const pickTheWinner = (carEntries) => {
       winners.push(carName);
     }
   });
+  // 우승자가 없을 때
+  if (maxPos <= 0) return [];
 
   return winners;
 };
