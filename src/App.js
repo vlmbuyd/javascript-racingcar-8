@@ -1,8 +1,6 @@
-import { Console } from '@woowacourse/mission-utils';
 import getInputValues from './view/inputReader.js';
-import { MESSAGES } from './utils/constants.js';
 import Game from './model/Game.js';
-import announceTheWinner from './view/outputView.js';
+import { output } from './view/outputView.js';
 
 class App {
   async run() {
@@ -12,10 +10,7 @@ class App {
     const game = new Game(carList, attemptsCount, carEntries);
     const results = game.playAllRound();
 
-    Console.print(MESSAGES.GAME_RESULT);
-    Console.print(results.join('\n'));
-
-    announceTheWinner(carEntries);
+    output(results, carEntries);
   }
 }
 

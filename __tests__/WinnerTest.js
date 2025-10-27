@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import Car from '../src/model/Car';
-import announceTheWinner from '../src/view/outputView';
+import { printWinner } from '../src/view/outputView';
 import { MESSAGES } from '../src/utils/constants';
 
 const printSpy = jest.spyOn(Console, 'print');
@@ -39,7 +39,7 @@ describe('우승자 출력 테스트', () => {
       MESSAGES.WINNER_ANNOUNCEMENT + MESSAGES.NO_WINNER,
     ],
   ])('%s', (_, carEntries, expectedMessage) => {
-    announceTheWinner(carEntries);
+    printWinner(carEntries);
 
     expect(printSpy).toHaveBeenCalledWith(expectedMessage);
   });
