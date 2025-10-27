@@ -1,25 +1,16 @@
 import { Console } from '@woowacourse/mission-utils';
 import getInputValues from './input.js';
-import parseIntoArray from './parse.js';
-import play from './play.js';
-import Car from './Car.js';
 import announceTheWinner from './pick.js';
 import { MESSAGES } from './constants.js';
+import Game from './Game.js';
 
 class App {
   async run() {
-    const { cars, attempts } = await getInputValues();
-    const parsedCars = parseIntoArray(cars);
-    const attemptsCount = Number(attempts);
+    const { carList, attemptsCount } = await getInputValues();
+    const carEntries = new Map(); // 자동차 이름과 Car 클래스 객체를 쌍으로 저장하는 Map
 
-    const results = [];
-    const carEntries = new Map();
-
-    parsedCars.forEach((car) => carEntries.set(car, new Car(car, '')));
-
-    Array.from({ length: attemptsCount }).forEach(() => {
-      play(carEntries, results);
-    });
+    const game = new Game(carList, attemptsCount, carEntries);
+    const results = game.playAllRound();
 
     Console.print(MESSAGES.GAME_RESULT);
     Console.print(results.join('\n'));
