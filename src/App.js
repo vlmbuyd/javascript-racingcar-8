@@ -13,18 +13,18 @@ class App {
     const attemptsCount = Number(attempts);
 
     const results = [];
-    const carList = new Map();
+    const carEntries = new Map();
 
-    parsedCars.forEach((car) => carList.set(car, new Car(car, '')));
+    parsedCars.forEach((car) => carEntries.set(car, new Car(car, '')));
 
     Array.from({ length: attemptsCount }).forEach(() => {
-      play(carList, results);
+      play(carEntries, results);
     });
 
     Console.print(MESSAGES.GAME_RESULT);
     Console.print(results.join('\n'));
 
-    announceTheWinner(carList);
+    announceTheWinner(carEntries);
   }
 }
 
