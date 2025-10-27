@@ -1,4 +1,4 @@
-import { MESSAGES } from '../src/constants';
+import { MESSAGES } from '../src/utils/constants';
 import InputValidator from '../src/utils/InputValidator';
 
 describe('입력값 검증 테스트: (에러 케이스)', () => {

@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { MESSAGES } from '../constants.js';
+import { MESSAGES } from '../utils/constants.js';
 import InputValidator from '../utils/InputValidator.js';
 import parseInputValues from '../utils/inputParser.js';
 

@@ -1,4 +1,4 @@
-import { GAME_RULES, MESSAGES, SEPERATOR } from '../constants.js';
+import { GAME_RULES, MESSAGES, SEPERATOR } from './constants.js';
 
 /**
  * 입력값 검증

@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import pickWinner from '../utils/pickWinner.js';
-import { MESSAGES } from '../constants.js';
+import { MESSAGES } from '../utils/constants.js';
 
 /**
  * 선정된 우승자를 발표

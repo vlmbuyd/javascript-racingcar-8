@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import getInputValues from './view/inputReader.js';
-import { MESSAGES } from './constants.js';
+import { MESSAGES } from './utils/constants.js';
 import Game from './model/Game.js';
 import announceTheWinner from './view/outputView.js';
 
