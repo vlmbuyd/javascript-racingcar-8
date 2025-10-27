@@ -20,6 +20,10 @@ export const GAME_RULES = Object.freeze({
   MAX_NAME_LENGTH: 5,
   MIN_ATTEMPTS_COUNT: 1,
   ALLOWED_CHAR_REGEX: /[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣, ]/,
+
+  RANDOM_NUMBER_MIN: 0,
+  RANDOM_NUMBER_MAX: 9,
+  MOVE_CRITERIA: 4,
 });
 
 export const SEPERATOR = Object.freeze({

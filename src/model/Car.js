@@ -1,4 +1,5 @@
 import { Random } from '@woowacourse/mission-utils';
+import { GAME_RULES } from '../utils/constants.js';
 
 export default class Car {
   /**
@@ -12,8 +13,11 @@ export default class Car {
   }
 
   static shouldMove() {
-    const randNum = Random.pickNumberInRange(0, 9);
-    return randNum >= 4;
+    const randNum = Random.pickNumberInRange(
+      GAME_RULES.RANDOM_NUMBER_MIN,
+      GAME_RULES.RANDOM_NUMBER_MAX
+    );
+    return randNum >= GAME_RULES.MOVE_CRITERIA;
   }
 
   move() {

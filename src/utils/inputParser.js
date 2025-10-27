@@ -1,7 +1,10 @@
+import { SEPERATOR } from './constants.js';
+
 /**
  * 문자열을 쉼표를 기준으로 나누어 배열로 반환
  */
-const parseIntoArray = (str) => str.split(',').map((el) => el.trim());
+const parseIntoArray = (str) =>
+  str.split(SEPERATOR.COMMA).map((el) => el.trim());
 
 /**
  * 입력 받은 자동차 이름 문자열과 시도 횟수를 파싱
