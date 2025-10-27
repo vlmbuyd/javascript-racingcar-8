@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import pickWinner from '../utils/pickWinner.js';
+import pickWinner from '../model/pickWinner.js';
 import { MESSAGES } from '../utils/constants.js';
 
 /**
