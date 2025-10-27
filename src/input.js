@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import { MESSAGES } from './constants.js';
 import InputValidator from './Validator.js';
+import parseInputValues from './parse.js';
 
 const getInputValues = async () => {
   const cars = await Console.readLineAsync(MESSAGES.CARS_NAME_INPUT);
@@ -9,7 +10,10 @@ const getInputValues = async () => {
   const validator = new InputValidator(cars, attempts);
   validator.run();
 
-  return { cars, attempts };
+  // 입력값 파싱
+  const { carList, attemptsCount } = parseInputValues(cars, attempts);
+
+  return { carList, attemptsCount };
 };
 
 export default getInputValues;
