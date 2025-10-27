@@ -1,7 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
-import { MESSAGES } from './constants.js';
-import InputValidator from './Validator.js';
-import parseInputValues from './parse.js';
+import { MESSAGES } from '../constants.js';
+import InputValidator from '../utils/InputValidator.js';
+import parseInputValues from '../utils/inputParser.js';
 
 const getInputValues = async () => {
   const cars = await Console.readLineAsync(MESSAGES.CARS_NAME_INPUT);

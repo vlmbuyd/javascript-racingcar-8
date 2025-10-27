@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
-import Car from '../src/Car';
-import announceTheWinner from '../src/pick';
+import Car from '../src/model/Car';
+import announceTheWinner from '../src/view/outputView';
 import { MESSAGES } from '../src/constants';
 
 const printSpy = jest.spyOn(Console, 'print');
