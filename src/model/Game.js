@@ -23,20 +23,30 @@ export default class Game {
     return `${car.name} : ${car.position}\n`;
   }
 
+  /**
+   * 단일 자동차를 이동시키고, 상태를 갱신하며, '결과 문자열'을 반환
+   * @param {Car} car - 이동시킬 자동차 인스턴스
+   * @returns {string} - 해당 자동차의 라운드 결과 문자열 ('pobi : --\n')
+   */
+  moveCar(car) {
+    const movedCar = car.move();
+
+    // 반환된 객체가 원본과 다를 때 == 전진했을 때
+    if (car !== movedCar) {
+      this.carEntries.set(car.name, movedCar);
+      return Game.savedGameResults(movedCar);
+    }
+
+    // 전진하지 않았을 때
+    return Game.savedGameResults(car);
+  }
+
   // 한 라운드 실행
   playRound(results) {
     let playResults = '\n';
 
-    this.carEntries.forEach((car, carName) => {
-      const movedCar = car.move();
-
-      // 반환된 객체가 원본과 다를 때 == 전진했을 때
-      if (car !== movedCar) {
-        this.carEntries.set(carName, movedCar);
-        playResults += Game.savedGameResults(movedCar);
-      } else {
-        playResults += Game.savedGameResults(car);
-      }
+    this.carEntries.forEach((car) => {
+      playResults += this.moveCar(car, playResults);
     });
 
     results.push(playResults);
